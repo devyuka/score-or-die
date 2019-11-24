@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+:root {
+  --main-text: #888888;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  text-align: center;
+  background-color: #e5e5e5;
+  font-family: "Roboto", sans-serif;
+  font-style: initial;
+}
+
+#app {
+  background-color: #fff;
+  width: 60%;
+  padding: 30px;
+  margin: 50px auto;
+}
+
+/* Title */
+
+h1 {
+  color: var(--main-text);
+  font-size: 5rem;
+}
+
+/* Input */
+
+.input {
+  width: 100%;
+}
+
+span {
+  color: var(--main-text);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3.5rem;
+  margin-right: 10px;
+  line-height: 2;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 2% 5%;
+  width: 80%;
+}
+
+/* Buttons */
+
+.buttons {
+  margin: 0 auto 40px;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+.buttons div {
+  background-color: #848ac0;
+  width: 20%;
+  padding: 2% 5%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+.buttons div:hover {
+  opacity: 0.6;
+}
+
+/* Error Text */
+
+.error-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 2rem;
+  line-height: 59px;
+  text-align: center;
+  color: #dd6767;
+}
+
+/* Scores */
+.score-wrapper {
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+  color: #888888;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.score-wrapper b {
+  display: block;
+  margin-right: 5px;
+}
+
+.score-wrapper div {
+  font-size: 4rem;
+  color: #87e041;
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
