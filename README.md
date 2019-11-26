@@ -4,11 +4,11 @@
  
 ## Regex for validation 
 ### Zip code
-[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9] 
+[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]  
 [link](https://stackoverflow.com/questions/1146202/canadian-postal-code-validation) 
  
 ### Name
-/^[a-zA-Z]+ [a-zA-Z]+$/ 
+/^[a-zA-Z]+ [a-zA-Z]+$/  
 [link](https://www.codexworld.com/how-to/validate-first-last-name-with-regular-expression-using-javascript/) 
  
 ### Country
@@ -23,16 +23,17 @@ if(age >= 0 &&  age <= 200)
 {
    //code
 }
-``` 
+```  
+[link](https://stackoverflow.com/questions/29467075/regex-for-age-validation-that-accepts-an-age-between-0-200-using-javascript-only)
  
 ### Year
 ```
 ^\d{4}$
-```
+```  
 [link](https://stackoverflow.com/questions/4374185/regular-expression-match-to-test-for-a-valid-year)
 
 ### Phone Number 
 ```
 /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g
-```
+```  
 [link](https://regexr.com/3c53v)
