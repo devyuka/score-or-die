@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import Title from "./Title";
 import Input from "./Input";
+import SubmitButtons from "./SubmitButtons";
 import Choices from "./Choices";
 import Score from "./Score";
 import Error from "./Error";
@@ -18,6 +19,7 @@ const App = function() {
         <Title />
         <Input />
         <Error />
+        <SubmitButtons />
         <Choices />
         <Score />
       </div>

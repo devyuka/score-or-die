@@ -90,6 +90,14 @@ input {
   color: #dd6767;
 }
 
+/* Submit Button */
+.submit-button input{
+  text-align: center;
+  width: 30%;
+  background-color: var(--main-text);
+  color: #fff;
+}
+
 /* Scores */
 .score-wrapper {
   font-weight: 900;
