@@ -1,0 +1,25 @@
+{
+  "name": "score-or-die",
+  "version": "1.0.0",
+  "description": "score or die",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuka030/score-or-die.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yuka030/score-or-die/issues"
+  },
+  "homepage": "https://github.com/Yuka030/score-or-die#readme",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "unstated-next": "^1.1.0"
+  }
+}
