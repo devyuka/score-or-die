@@ -31789,7 +31789,40 @@ function createContainer(useHook) {
 function useContainer(container) {
   return container.useContainer();
 }
-},{"react":"node_modules/react/index.js"}],"AppState.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"utils.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sum = sum;
+exports.validateZip = validateZip;
+exports.validateName = validateName;
+
+function sum(a, b) {
+  return a + b;
+}
+
+function validateZip(zipcode) {
+  var regex = /[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]/g;
+
+  if (regex.test(zipcode)) {
+    return true;
+  }
+
+  return false;
+}
+
+function validateName(name) {
+  var regex = /^[a-zA-Z]+ [a-zA-Z]+$/g;
+
+  if (regex.test(name)) {
+    return true;
+  }
+
+  return false;
+}
+},{}],"AppState.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31800,6 +31833,8 @@ exports.default = void 0;
 var _react = require("react");
 
 var _unstatedNext = require("unstated-next");
+
+var _utils = require("./utils.js");
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -31828,7 +31863,7 @@ var useAppState = function useAppState() {
 var AppState = (0, _unstatedNext.createContainer)(useAppState);
 var _default = AppState;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","unstated-next":"node_modules/unstated-next/dist/unstated-next.mjs"}],"Input.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","unstated-next":"node_modules/unstated-next/dist/unstated-next.mjs","./utils.js":"utils.js"}],"Input.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31977,7 +32012,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59202" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51677" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
