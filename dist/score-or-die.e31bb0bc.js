@@ -31850,13 +31850,30 @@ var useAppState = function useAppState() {
       input = _useState2[0],
       setInput = _useState2[1];
 
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      error = _useState4[0],
+      setError = _useState4[1];
+
   var onInputChange = function onInputChange(e) {
     return setInput(e.currentTarget.value);
   };
 
+  var onSubmit = function onSubmit() {
+    var isValid = (0, _utils.validateName)(input);
+
+    if (!isValid) {
+      setError("it's invalid");
+    } else {
+      setError("");
+    }
+  };
+
   return {
     input: input,
-    onInputChange: onInputChange
+    onInputChange: onInputChange,
+    error: error,
+    onSubmit: onSubmit
   };
 };
 
@@ -31888,10 +31905,39 @@ var Input = function Input() {
     type: "text",
     value: input,
     onChange: onInputChange
-  }), input);
+  }));
 };
 
 var _default = Input;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./AppState":"AppState.js"}],"SubmitButton.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _AppState = _interopRequireDefault(require("./AppState"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SubmitButton = function SubmitButton() {
+  var _AppState$useContaine = _AppState.default.useContainer(),
+      onSubmit = _AppState$useContaine.onSubmit;
+
+  return _react.default.createElement("div", {
+    className: "submit-button"
+  }, _react.default.createElement("input", {
+    type: "submit",
+    value: "Validate",
+    onClick: onSubmit
+  }));
+};
+
+var _default = SubmitButton;
 exports.default = _default;
 },{"react":"node_modules/react/index.js","./AppState":"AppState.js"}],"Choices.js":[function(require,module,exports) {
 "use strict";
@@ -31947,17 +31993,23 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _AppState = _interopRequireDefault(require("./AppState"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Error = function Error() {
-  return _react.default.createElement("span", {
-    className: "error-text"
-  }, "yOu WrOnG");
+var Error = function Error(error) {
+  if (error) {
+    return _react.default.createElement("span", {
+      className: "error-text"
+    }, error);
+  } else {
+    return null;
+  }
 };
 
 var _default = Error;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./AppState":"AppState.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -31967,6 +32019,8 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 var _Title = _interopRequireDefault(require("./Title"));
 
 var _Input = _interopRequireDefault(require("./Input"));
+
+var _SubmitButton = _interopRequireDefault(require("./SubmitButton"));
 
 var _Choices = _interopRequireDefault(require("./Choices"));
 
@@ -31980,11 +32034,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // let AppState = createContainer(useAppState);
 var App = function App() {
-  return _react.default.createElement(_AppState.default.Provider, null, _react.default.createElement("div", null, _react.default.createElement(_Title.default, null), _react.default.createElement(_Input.default, null), _react.default.createElement(_Error.default, null), _react.default.createElement(_Choices.default, null), _react.default.createElement(_Score.default, null)));
+  var _AppState$useContaine = _AppState.default.useContainer(),
+      error = _AppState$useContaine.error;
+
+  return _react.default.createElement(_AppState.default.Provider, null, _react.default.createElement("div", null, _react.default.createElement(_Title.default, null), _react.default.createElement(_Input.default, null), _react.default.createElement(_Error.default, {
+    error: error
+  }), _react.default.createElement(_SubmitButton.default, null), _react.default.createElement(_Choices.default, null), _react.default.createElement(_Score.default, null)));
 };
 
 _reactDom.default.render(_react.default.createElement(App, null), document.getElementById("app"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Title":"Title.js","./Input":"Input.js","./Choices":"Choices.js","./Score":"Score.js","./Error":"Error.js","./AppState":"AppState.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./Title":"Title.js","./Input":"Input.js","./SubmitButton":"SubmitButton.js","./Choices":"Choices.js","./Score":"Score.js","./Error":"Error.js","./AppState":"AppState.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -32012,7 +32071,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51677" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52056" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

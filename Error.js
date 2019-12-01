@@ -1,7 +1,12 @@
 import React from "react";
+import AppState from "./AppState";
 
-const Error = () => {
-  return <span className="error-text">yOu WrOnG</span>;
+const Error = error => {
+  if (error) {
+    return <span className="error-text">{error}</span>;
+  } else {
+    return null;
+  }
 };
 
 export default Error;

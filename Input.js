@@ -8,7 +8,6 @@ const Input = () => {
     <div className="input">
       <span>A1.</span>
       <input type="text" value={input} onChange={onInputChange}></input>
-      {input}
     </div>
   );
 };

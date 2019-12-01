@@ -91,11 +91,12 @@ input {
 }
 
 /* Submit Button */
-.submit-button input{
+.submit-button input {
   text-align: center;
   width: 30%;
   background-color: var(--main-text);
   color: #fff;
+  margin-bottom: 30px;
 }
 
 /* Scores */
