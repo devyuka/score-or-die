@@ -1,6 +1,11 @@
 # score-or-die
 "Score or Die" is a game which you can guess proper format to answer. 
-  
+
+## Launch the app on local server
+Type this command below on terminal:
+```terminal
+npm dev
+```
  
 ## Regex for validation 
 ### Zip code
